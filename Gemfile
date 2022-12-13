@@ -2,8 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.0'
-
-gem 'rails', '~> 5.2.3'
+gem 'rails', '~> 5.2.8.1'
 gem 'pg'
 gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
@@ -15,7 +14,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'sidekiq'
 gem 'typhoeus'
 gem 'dotenv'
-
+gem "rest-client" # I use this gem for an API call
+gem 'dotenv-rails' # I use .env file for my database and API key
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
