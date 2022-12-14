@@ -7,7 +7,7 @@
     <th>
       <div>Status</div>
 <div>
-      <%= f.label "active"%>
+    <%= f.label "active"%>
     <%= f.radio_button  :status, "Active"%>
     <%= f.label "Inactive"%>
     <%= f.radio_button  :status, "Inactive"%>
@@ -33,9 +33,3 @@
 <%end%>
 </table>
 <%= will_paginate @users %>
-<%# id": 10,
-    "first_name": "Georgeanna",
-    "last_name": "Gusikowski",
-    "status": "Active",
-    "created_at": "2020-02-28T12:56:44.829Z",
-    "email": "carter@crist.biz" %>

@@ -5,13 +5,25 @@ RSpec.describe "Users actions", type: :feature do
 
   end
 
-  describe "/users/:id" do
+  describe "Find all the user information on a user (show) page" do
+    before(:all) do
+      @user=User.first
+    end
     before do
-      visit '/users/1'
+      visit "/users/#{@user["id"]}"
     end
 
-    it "finds user name on the page" do
-      expect(page).to have_content("James")
+    it "finds user first name on the page" do
+      expect(page).to have_content(@user["first_name"])
+    end
+    it "finds user last name on the page" do
+      expect(page).to have_content(@user["last_name"])
+    end
+    it "finds user status on the page" do
+      expect(page).to have_content(@user["status"])
+    end
+    it "finds user email on the page" do
+      expect(page).to have_content(@user["email"])
     end
   end
 end
