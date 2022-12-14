@@ -2,9 +2,11 @@ class UsersWorker
   include Sidekiq::Worker
 
   def perform(*)
-    p "_________________________________runing perform_______________________________________________"
     url="https://microverse-api-app.herokuapp.com/users"
-   response = RestClient.get(url, headers={Authorization: ENV['USERS_API_KEY']})
-   p JSON.parse(response.body)
+    response = RestClient.get(url, headers={Authorization: ENV['USERS_API_KEY']})
+    if response.code==200
+          user_data = JSON.parse(response.body)
+          User.create!(user_data)
+    end
   end
 end
