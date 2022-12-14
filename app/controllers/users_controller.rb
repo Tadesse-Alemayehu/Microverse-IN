@@ -17,6 +17,6 @@ p @users.length
   end
 
   def show
-    @name = "James"
+    @user=User.find params[:id]
   end
 end

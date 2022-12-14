@@ -1,1 +1,15 @@
-<p>Hello, <%= @name %></p>
+<table>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Status</th>
+    <th>email</th>
+  </tr>
+    <tr>
+    <td><%= @user["first_name"]%></td>
+    <td><%= @user["last_name"]%></td>
+    <td><%= @user["status"]%></td>
+    <td><%= @user["email"]%></td>
+  </tr>
+
+</table>

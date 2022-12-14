@@ -31,4 +31,17 @@ RSpec.describe User, type: :model do
       expect(user).to eq(true)
     end
   end
+
+  context "Test override setters" do
+    before(:all) do
+        @user = User.create!(first_name: "first name",last_name: "last name",status: "Inactive", email: "sampleemail@host.com")
+    end
+
+    it "capitalize the first name" do
+      expect(@user["first_name"][0]).to eq('F')
+    end
+    it "capitalize the last name" do
+      expect(@user["last_name"][0]).to eq('L')
+    end
+  end
 end
