@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    UsersWorker.perform_async()
+    UsersWorker.perform_async(0,10)
     if params[:status] && params[:status] !="All"
 
     @users=User.where(status: params[:status]).paginate(:page => params[:page], :per_page => params[:limit] || 2)

@@ -9,7 +9,7 @@ RSpec.describe "Users actions", type: :feature do
     before(:all) do
       @user=User.first
     end
-    before do
+    before(:each) do
       visit "/users/#{@user["id"]}"
     end
 

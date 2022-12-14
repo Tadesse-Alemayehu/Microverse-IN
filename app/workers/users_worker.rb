@@ -1,8 +1,8 @@
 class UsersWorker
   include Sidekiq::Worker
 
-  def perform(*)
-    url="https://microverse-api-app.herokuapp.com/users?limit=10"
+  def perform(offset, limit)
+    url="https://microverse-api-app.herokuapp.com/users?limit=#{limit}&offset=#{offset}"
     response = RestClient.get(url, headers={Authorization: ENV['USERS_API_KEY']})
     if response.code==200
           user_data = JSON.parse(response.body)
