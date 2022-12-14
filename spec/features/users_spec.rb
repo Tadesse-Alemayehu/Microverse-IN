@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Users actions", type: :feature do
-  describe "/users" do
+  describe "check users directory for list of users" do
 
   end
 
