@@ -1,13 +1,15 @@
 class UsersController < ApplicationController
   def index
-    p "_________________________________runing users index_______________________________________________"
     UsersWorker.perform_async()
-    @users=User.all
-    # paginate on what has already been loaded (remove hitting the database more frequently)
-    offset=params[:offset]&.to_i || 0
-    limit=params[:limit]&.to_i || 2
-    p "limit is #{offset} offset is #{offset}"
-    @current_user=@users.slice(offset,limit)
+    if params[:status]
+
+    @users=User.where(status: params[:status]).paginate(:page => params[:page], :per_page => params[:limit] || 2)
+    p @users.length
+    else
+    @users=User.paginate(:page => params[:page], :per_page => params[:limit]||2)
+p @users.length
+    end
+
         respond_to do |format|
           format.html # index.html.erb
           format.json {render json: @users}

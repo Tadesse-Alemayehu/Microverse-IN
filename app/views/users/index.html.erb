@@ -1,12 +1,25 @@
 
+<%= form_with local: true, method: "get" do |f| %>
 <table>
   <tr>
     <th>First name</th>
     <th>Last name</th>
-    <th>Status</th>
+    <th>
+      <div>Status</div>
+<div>
+      <%= f.label "active"%>
+    <%= f.radio_button  :status, "Active"%>
+    <%= f.label "Inactive"%>
+    <%= f.radio_button  :status, "Inactive"%>
+    <%= f.label "All"%>
+    <%= f.radio_button  :status, "active"%>
+    <%= f.submit  "Filter" %>
+</div>
+    </th>
     <th>email</th>
   </tr>
-<% @current_user.each  do |user| %>
+<% end %>
+<% @users.each  do |user| %>
 
   <tr>
     <td><%= user["first_name"]%></td>
@@ -17,7 +30,7 @@
 
 <%end%>
 </table>
-
+<%= will_paginate @users %>
 <%# id": 10,
     "first_name": "Georgeanna",
     "last_name": "Gusikowski",

@@ -17,6 +17,7 @@ gem 'typhoeus'
 gem 'dotenv'
 gem "rest-client" # I use this gem for an API call
 gem 'dotenv-rails' # I use .env file for my database and API key
+gem 'will_paginate', '~> 3.1', '>= 3.1.6' # I used this ro pagenate my user lists when redering HTML
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
