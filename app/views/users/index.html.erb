@@ -17,6 +17,7 @@
 </div>
     </th>
     <th>email</th>
+    <th>See user</th>
   </tr>
 <% end %>
 <% @users.each  do |user| %>
@@ -26,6 +27,7 @@
     <td><%= user["last_name"]%></td>
     <td><%= user["status"]%></td>
     <td><%= user["email"]%></td>
+<td><%= button_to 'See user detail', user_path({:id =>user["id"]}) , method: :get%></td>
   </tr>
 
 <%end%>
