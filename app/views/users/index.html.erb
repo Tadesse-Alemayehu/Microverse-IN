@@ -6,14 +6,14 @@
     <th>Last name</th>
     <th>
       <div>Status</div>
-<div>
-    <%= f.label "active"%>
-    <%= f.radio_button  :status, "Active"%>
-    <%= f.label "Inactive"%>
-    <%= f.radio_button  :status, "Inactive"%>
-    <%= f.label "All"%>
-    <%= f.radio_button  :status, "All"%>
-    <%= f.submit  "Filter" %>
+<div class="filter">
+    <span><%= f.label "active"%>
+    <%= f.radio_button  :status, "Active"%></span>
+    <span><%= f.label "Inactive"%>
+    <%= f.radio_button  :status, "Inactive"%></span>
+    <span><%= f.label "All"%>
+    <%= f.radio_button :status, "All", checked: true%></span>
+    <span><%= f.submit  "🏹" %></span>
 </div>
     </th>
     <th>email</th>

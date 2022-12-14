@@ -28,6 +28,10 @@ th {
   background-color: black;
   color: white;
 }
+td,
+th {
+  padding: 5px;
+}
 tr:nth-child(odd) {
   background-color: rgb(87, 122, 122);
 }
@@ -35,4 +39,7 @@ tr:nth-child(odd) {
   display: flex;
   justify-content: center;
   gap: 10px;
+}
+.filter span {
+  border: 1px solid silver;
 }
