@@ -13,3 +13,26 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+table {
+  background-color: silver;
+  width: max-content;
+  margin: auto;
+}
+th {
+  background-color: black;
+  color: white;
+}
+tr:nth-child(odd) {
+  background-color: rgb(87, 122, 122);
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
