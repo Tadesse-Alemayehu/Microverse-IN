@@ -7,7 +7,7 @@
 - ROR
 - Postgresql
 
-## Screen shot
+## Screenshot
 ![Screenshot 2022-12-14 152700](https://user-images.githubusercontent.com/69077061/207595866-2d6f40c9-fe98-45b0-96fd-d206e613b40a.png)
 
 ## Getting Started
