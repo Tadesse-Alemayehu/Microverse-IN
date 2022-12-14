@@ -1,1 +1,26 @@
-<h1> index page </h1>
+
+<table>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Status</th>
+    <th>email</th>
+  </tr>
+<% @current_user.each  do |user| %>
+
+  <tr>
+    <td><%= user["first_name"]%></td>
+    <td><%= user["last_name"]%></td>
+    <td><%= user["status"]%></td>
+    <td><%= user["email"]%></td>
+  </tr>
+
+<%end%>
+</table>
+
+<%# id": 10,
+    "first_name": "Georgeanna",
+    "last_name": "Gusikowski",
+    "status": "Active",
+    "created_at": "2020-02-28T12:56:44.829Z",
+    "email": "carter@crist.biz" %>
